@@ -1,0 +1,244 @@
+We talked about data. We talked about the model. We talked about the objective function.
+
+But let's go back to it again.
+
+Let's assume I want to come up with the line equation of a line I write it y is equal to m x plus h. m is for the slope and h is for the intercept.
+
+Then the question is what m and what h should I pick?
+
+That means for this model there are two parameters I'm trying to learn.
+
+That's why we call it machine learning. Because you need to learn M and you need to learn H.
+
+Now that becomes your starting point. You may say, hold on, let me do M0 and let me do h
+
+Say one. Somebody says, why not doing m one and h zero.
+
+And it could go on and on. Then this choice of a starting point could be super crucial.
+
+Would I go with this or would I go with this?
+
+And at the end you come up, for example, this is the optimal one that you would be coming up with at the end.
+
+You're coming up with M being let's say hypothetically is point six and H is hypothetically is minus one point two.
+
+Now, if you're starting from this starting point, you want to get to the so-called this optimal for it.
+
+In many cases it would be very, very crucial for us to start from a good starting point.
+
+I'm going to actually show this one to you in a very nice, visualized way in one of the lectures. Now,
+
+and I'm saying here, this is definitely something that we'll be discussing it in the following lecture.
+
+The, we already mentioned about how crucial that could be, the starting point.
+
+And some may say that, is it really that important? The answer is yes.
+
+And I'm just having this for you to see here. It did lots and lots of literature on this one.
+
+It all depends on the model that you're utilizing.
+
+And the only reason I'm putting all of this here for you to recognize, this is a very,
+
+very important field, actually, that which initial parameters should I start with?
+
+Again, every component, as a chef, it is exactly like this.
+
+You may assume, for example, if you want to add the spice, ingredients, everything should be right.
+
+But if you don't do the right to spice, the entire taste of the food would be different, then every component in cooking for a chef matters.
+
+That's the same thing as for AI. As an AI chef, every component of the AI matters.
+
+You may do an amazing job, I'm repeating myself, but it's absolutely worthy of doing it.
+
+You've done an amazing job on your data. You did an amazing job on your model.
+
+You did an amazing job on our objective function, we're going to talk about optimization.
+
+All of them is good, but you're not doing a good job on starting from a good initial parameters set. Again think of that M and H.
+
+And of course for AI models,
+
+you may say how many of these initial parameters that I may have? When it comes to something like ChatGPT types or any kind of GPTs,
+
+they are billions of parameters, billions.
+
+Here we just think about to M & H, and you can imagine how difficult and challenging that would become to train such a big model.
+
+I'm going to talk about, actually, LLMs in one of our lectures, I'm going to come back to this concept.
+
+Now, the other thing is this. Let's assume I'm standing in this corner of the room.
+
+You're standing on the other corner in another room, and then you wondering, let's say this corner is m is equal to one, h is equal to zero.
+
+That corner m is equal to minus one and h is equal to say two.
+
+Then you wondering as I'm going from this corner to that corner, how does the surface change?
+
+You may say hold on. You never mention anything about the surface for us.
+
+How would I know what you mean by surface? That simply means this.
+
+I'm going to write it up here. Let's assume I'm having M being one and H being two.
+
+And then on the other side m is minus one and h is say minus three.
+
+I'm just making these things up right. Now, you wondering, how can I really go from this guy to that guy?
+
+But what going means? That simply means I can come up with a combination between the two.
+
+And remember, this could go to billions. That means this could go on and on and on.
+
+Because I have many of these Ms and many of these Hs so-called. This is the way I'm trying to explain this one here.
+
+That means what you're doing is you can come up with a combination.
+
+That means you're saying that I'm going to go from one to minus one, three.
+
+And let's assume I'm doing alpha just for the sake of argument 0.5
+
+What you're doing here is you do point five to this guy.
+
+Point five is not a good example. I'm doing point two. I'm multiplying this one by point two becomes point two plus this one by point two.
+
+Minus point two. If I add it I get zero. Let's do point two
+
+This guy. Doing point two this guy is point four. I'm doing point two this guy is minus point six.
+
+This becomes -0.2. Then you recognize the linear combination between these two turn out to become 0 and say -0.2
+
+Then I can keep doing this for various different value of alpha.
+
+And that way I'm coming up with a path, and I can put each of these M and H and assess it.
+
+And that's extremely helpful to understand how jagged the path is for you.
+
+Go through different M and H.
+
+This is a field that people are actually doing a lot of research on it, to understand how to come up with the best possible points.
+
+This is exactly what I wanted to explain here, that you could easily have it as a function of alpha,
+
+because now you recognize, let's say alpha goes from 0 to 1.
+
+I showed you for the case of point two. That was one example.
+
+And then your surface may look like this. As you're going through it.
+
+The error surface. The error surface means the value of the objective.
+
+It may look like this. It may look like that could be many different shapes.
+
+If it looks like this, then you say hold on.
+
+This is the best possible point because it has the least error.
+
+If it's something like this, you say, Oh my God, this is so difficult because it's so jagged.
+
+If it's like this again, you said this is not good. We do this study to understand how this surface moves.
+
+And by looking at this, studying this one, you can come up with
+
+a good starting point. As I said, it's very, very important.
+
+Anytime a problem comes to us, you set up your model, you set up your data, you have your objective function.
+
+You have an understanding of when the starting point is.
+
+And the trick to it is exactly as I did here.
+
+Simply doing it, we did the project. I cannot mention the name of the asset management firm.
+
+They were doing portfolio of mutual funds, and that's exactly the study they did for it.
+
+They wanted to optimize the allocation of different funds they were having.
+
+And actually, that was when I studied that if you are doing it for one of the techniques the AI techniques that I have in mind,
+
+I'm going to show this in a slightly in a visualized way. Let's assume I'm giving you these two curves blue points and red points.
+
+Right. And I want to do the so-called classification for them.
+
+That means I want to do a nice separation between blue and red.
+
+You may say, hold on, this is super easy. I can easily go ahead and do this slide.
+
+And you're absolutely correct. But remember, machine doesn't see it that way.
+
+When you give it to a machine, then how machine would come up with this line?
+
+And why this line? Why not that line? They both have them doing a nice classification, recognizing how beautifully separating it. Classification means
+
+You want to come up with a line that nicely separates the blue from the red.
+
+And you recognizing, for example, I'm giving you four cases because these are the so-called the lines.
+
+You see, this is one of the lines. This is another line. This is another line, and this is yet another line.
+
+And I'm showing you the so-called a and b, a and b here is this amount, h doesn't matter.
+
+These are dummy variables. Then you recognizing different M and H would give you different cases, but none of them is actually the optimal.
+
+And none of it is really doing a nice separation. The whole point here is I just want you to recognize that find the right optimal one is not easy.
+
+And how machine would do it, we're going to go through it and explain to the machine would do it.
+
+But the most important part about it is which one would you start from?
+
+Because none of them is the optimal one. Definitely not.
+
+And then you want it doesn't matter which one you're starting from. And then you see later, in many cases the answer is yes, it does matter.
+
+This visualization of surfaces, as I mentioned, this is one example of it through the alpha.
+
+You recognizing that, for example, how the so-called melody surfaces,
+
+that means you have wondering when I'm coming here, which because this is so flat, where should I pick to be my point?
+
+Because this surface is very flat.
+
+On the other hand, you recognizing easily this is a point that I'm interested in, and I can stop there.
+
+This is an example of the good surface. This is an example of a troublesome surface because it is so flat, as if you going to Nevada,
+
+Arizona, somewhere and you're looking for the lowest point or vice versa, the highest point, because you can reverse it.
+
+Then the whole point is if the surface is so flat, it is very difficult for us to actually find the best possible point.
+
+And if it happens to be this way in many cases, either you need to check your objective function, you need to check your even your model.
+
+You may need to check the way your starting point is and many things like that.
+
+Just again, to give you a bit of a background on importance of the
+
+initial parameter set, let's assume, just for the sake of the argument, I am sitting here.
+
+And I am looking for the highest point and this is my starting point.
+
+If you're starting from this point and you start moving,
+
+and then you come over here and you're going down and you travel, then you recognize, hold on.
+
+Maybe that point was it and I'm going to stop.
+
+And you are right because you started at this point and you don't see anything in horizon that you see the highest possible point.
+
+But the thing is, if you have traveled enough, you would have recognized that actually you miss this point.
+
+The example of it was, if you're looking for Himalaya, you're not searching it in Arizona.
+
+That was an example my PhD advisor once told me then this is very important that you search
+
+various different points as a starting point to make sure that hopefully you get to Himalaya.
+
+That's the entire thing here, that it really matters for you that at the end of all your data, your model,
+
+your objective function, whatever you have, it is very important to know where to start from.
+
+I'm emphasizing because that matters a lot. Otherwise, you would never get to really the optimal possible point that you have in your mind.
+
+And this is a very, very challenging problem. This is one of the things that we call it overfitting.
+
+That means your model is so deep, has so many parameters that you may assume you are the right place, but you are not at the right place.
+

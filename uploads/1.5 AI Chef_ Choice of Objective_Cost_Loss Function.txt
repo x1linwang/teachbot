@@ -1,0 +1,64 @@
+Objective function. Some people call the loss function, some people call it cost function.
+
+Doesn't matter what, you can call it whatever you like. Let's go back again to what I said
+
+The objective is. Let's assume I have bunch of points.
+
+These are a bunch of points I'm having and I want to find the best line going through it.
+
+This is the best line going through it.
+
+As I said, your objective could be I want to find the best possible line has an average distance from the points, but what's the average distance?
+
+Some people look at the average distance as squared and then they do the average and they do the square root of this.
+
+That's one way of looking at it. This is one objective function. It's called mean squared error.
+
+Some people said no, no, no, I don't like this. I want to look at absolute difference, an average of the absolute difference.
+
+This is what we call absolute error. Some people say no, no, no I want to do cross entropy.
+
+That's the meaning of cross-entropy. What I'm trying to tell you is there are many different choices.
+
+It's absolutely up to how you want to do it, absolutely up to you.
+
+But you need to be very, very careful because once you're changing your objective, the results could be very different.
+
+I can draw it this way for you. Let's assume I'm having these points one more time.
+
+And for these points, I'm putting one outlier here and one outlier here.
+
+Let me continue this and few outliers here.
+
+Now depending on your objective you may get this line or you may get this line.
+
+Why it changes because of these outliers. They would be biased towards them as opposed to going through the rest of them.
+
+It all depends on your objective. You need to look at your data.
+
+You need to look at your outlier and say that, hold on.
+
+What objective would give me the best possible one?
+
+Not getting distorted with these outliers? I'm going to come back to it in one of the lectures when we do Visual Introduction to Machine Learning.
+
+The other thing is, in many cases you may want to regularize what you're doing, which you could do it in an exogenous way or endogenous way.
+
+What I'm saying by that one is, you may say, I want a definitive one to make sure that when I'm doing setting up my objective function,
+
+I want to make sure that I'm not far from where I'm starting.
+
+And that means you introducing the so-called penalty term that if you moving away from it, it will bring you back in, that means, for example,
+
+you're saying that if I have a bunch of points, I definitely want to make sure that the slope for this one would be around, let's say point eight.
+
+And if I'm moving from point eight you are penalizing it.
+
+Again, this is a concept I want to make sure when you hear about people saying that, would you regularize what you have in your objective?
+
+That simply means are you introducing a penalty if you're moving too far away from where you're starting?
+
+That's that notion. My apologies for having some of these geeky term and mathematical terms.
+
+That's really what the way is written.
+

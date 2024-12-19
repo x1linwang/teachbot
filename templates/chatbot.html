@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Teaching Assistant</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            margin-top: 20px;
+        }
+        .card {
+            background: #fff;
+            transition: .5s;
+            border: 0;
+            margin-bottom: 30px;
+            border-radius: .55rem;
+            position: relative;
+            width: 100%;
+            box-shadow: 0 1px 2px 0 rgb(0 0 0 / 10%);
+        }
+        .chat-app .people-list {
+            width: 280px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 20px;
+            z-index: 7;
+            background: #fff;
+            border-right: 1px solid #eaeaea;
+        }
+        .chat-app .chat {
+            margin-left: 280px;
+            border-left: 1px solid #eaeaea;
+        }
+        .people-list .chat-list li {
+            padding: 10px 15px;
+            list-style: none;
+            border-radius: 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .people-list .chat-list li.active {
+            background: #efefef;
+        }
+        .chat .chat-header {
+            padding: 15px 20px;
+            border-bottom: 2px solid #f4f7f6;
+        }
+        .chat .chat-history {
+            padding: 20px;
+            height: 400px;
+            overflow-y: auto;
+            border-bottom: 2px solid #fff;
+        }
+        .chat .chat-message {
+            padding: 20px;
+        }
+        .message {
+            margin-bottom: 15px;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .message.my-message {
+            background: #efefef;
+            text-align: right;
+        }
+        .message.other-message {
+            background: #e8f1f3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row clearfix">
+            <div class="col-lg-12">
+                <div class="card chat-app">
+                    <div id="plist" class="people-list">
+                        <button id="new-chat-btn" class="btn btn-primary w-100 mb-3">Start a New Chat</button>
+                        <ul class="list-unstyled chat-list mt-2 mb-0">
+                            {% for chat in chat_histories %}
+                            <li class="clearfix {% if loop.first %}active{% endif %}" data-id="{{ chat.id }}">
+                                <div>
+                                    <span>{{ chat.conversation_name }}</span>
+                                </div>
+                                <div>
+                                    <button class="btn btn-sm btn-link rename-btn">Rename</button>
+                                    <a href="/api/download-chat?id={{ chat.id }}" class="btn btn-sm btn-link" target="_blank">Download</a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="chat">
+                        <div class="chat-header clearfix">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="chat-about">
+                                        <h6 class="m-b-0">AI Chatbot</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat-history"></div>
+                        <div class="chat-message clearfix">
+                            <div class="input-group mb-0">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fa fa-send"></i></span>
+                                </div>
+                                <input type="text" id="chat-input" class="form-control" placeholder="Enter text here...">
+                                <button id="send-btn" class="btn btn-primary">Send</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const chatListItems = document.querySelectorAll('.chat-list li');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+        const chatHistory = document.querySelector('.chat-history');
+        const newChatBtn = document.getElementById('new-chat-btn');
+
+        // Start a new chat
+        newChatBtn.addEventListener('click', () => {
+            chatHistory.innerHTML = '';
+            chatInput.value = '';
+        });
+
+        // Fetch chat history when a conversation is clicked
+        chatListItems.forEach(item => {
+            item.addEventListener('click', () => {
+                chatListItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                const chatId = item.getAttribute('data-id');
+                fetch(`/api/chat-history?id=${chatId}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        chatHistory.innerHTML = data.messages.map(msg => {
+                            return `<div class="message ${msg.type === 'user' ? 'my-message' : 'other-message'}">${msg.text}</div>`;
+                        }).join('');
+                    });
+            });
+        });
+
+        // Send new messages
+        sendBtn.addEventListener('click', () => {
+            const userMessage = chatInput.value.trim();
+            if (userMessage === '') return;
+
+            appendMessage('my-message', userMessage);
+            chatInput.value = '';
+
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: userMessage })
+            })
+            .then(response => response.json())
+            .then(data => {
+                appendMessage('other-message', data.response);
+            })
+            .catch(err => {
+                appendMessage('other-message', 'Error connecting to chatbot.');
+            });
+        });
+
+        function appendMessage(className, text) {
+            const message = document.createElement('div');
+            message.className = `message ${className}`;
+            message.textContent = text;
+            chatHistory.appendChild(message);
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+    </script>
+</body>
+</html>

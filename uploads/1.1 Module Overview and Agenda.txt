@@ -1,0 +1,46 @@
+Hi. I'm going to talk about the general recipe for AI related problems.
+
+Or in short, how to become an AI chef. The agenda for today is we are going to talk about AI, evolution and revolution.
+
+And of course, to become a chef there is a recipe, and the generic recipe for it is definitely data.
+
+Knowing that AI is data driven and without data, we cannot really do anything, then the most important part is data.
+
+And I will be doing a lot of emphasis on this. Then after that, it becomes model itself.
+
+But you cannot imagine having a model,  model not being robust.
+
+Every model should have an objective function. A very simple example of it that you should think about is
+
+Let's assume you have a bunch of points and you want to find a line going through those points.
+
+Then what's your objective? Your objective is finding the best line that have the minimum distance on average from those points.
+
+But then again, any line has to have some slope and intercept.
+
+And that means you have to start from some slope and intercept.
+
+Then you may ask me a question that, but how can I find out the best slide?
+
+My answer is you need to optimize it. Then this notion of optimization.
+
+And we're going to have a nice full lecture on exactly what optimization is in a very nice visualized way.
+
+But before we start this, let me start with a picture of a day which is nothing but the ways
+
+NASA scientists in 50s, they were working together.
+
+This is something we don't see today. We don't see scientists 6 or 7 of them going on a blackboard,
+
+We don't even see blackboard or holding in chalk and doing it, that's the way they were working it together.
+
+And you may imagine, did they really think about AI back then?
+
+The answer to it is absolutely yes. Because you think that Alan Turing is the so-called famous, Turing test, is saying that the computer
+
+would deserve to be called intelligent if it could deceive a human into believing that it was human.
+
+And this is actually what we are talking about, because it's sometimes impossible to imagine what we are seeing,
+
+What we are reading. Is that human generated or machine generated?
+

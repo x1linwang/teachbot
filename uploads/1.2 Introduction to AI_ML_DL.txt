@@ -1,0 +1,164 @@
+Now, what I've done is this.
+
+In the last, I would say, six, seven years, I've been going on Google, done Google search
+
+on a number of pages.
+
+And these are some of the things that I was looking for.
+
+AI, artificial intelligence, machine learning, deep learning, natural language processing,
+
+big data, data science, data analytics, business analytics, financial technology, and most
+
+recently open AI, chat, GBT, language modeling, and large language models.
+
+You see, this is just a bunch of few days that I was doing the search, and I want you
+
+to pay attention to the number of hits on the pages.
+
+The whole thing you should get out of the whole is you see that exponentially these
+
+numbers are growing.
+
+Just look at, for example, I'm going to highlight it here, going from just three billion, coming
+
+to 19 billion, but at the same time, one would say, when you're saying AI, Allen Iverson,
+
+the basketball player, call himself also AI.
+
+But then you're looking at, for any of these buzzwords, you're looking at it, the number
+
+being exponentially growing from low millions to high millions to billions, and no question
+
+about it that these buzzwords are out there.
+
+Now, from the AI evolution and revolution, I'm going to put it from the aspect of, first
+
+of all, we're hearing about AI, machine learning, or in short, ML, deep learning, or in short,
+
+DL.
+
+From the Venn diagram perspective, the way you should think about it is the entire domain
+
+that you are talking about is called AI, but within that it comes machine learning, and
+
+within machine learning comes deep learning, and within deep learning comes, say, large
+
+language models.
+
+But some of you may ask me, how about big data itself?
+
+Big data could be sitting here.
+
+That means part of it is within AI, and part of it is outside AI.
+
+Doesn't mean, and we're going to talk about it, doesn't mean the minute you touch data,
+
+you're doing AI.
+
+No.
+
+You may be putting some, the so-called embedding into it, some cleaning which you utilize AI,
+
+but in general, doesn't mean because you are touching data or the notion of big data, you
+
+are doing AI.
+
+We need to be careful about this.
+
+This is as far as the Venn diagram.
+
+What's the time evolution of it?
+
+The time evolution is this.
+
+If you go back, you remember we talked about that quote that we had for Alan Turing, and
+
+that actually started from this era, 1940s, and then it came until 1980s, and we were
+
+all talking about artificial intelligence or AI.
+
+Prior to 1980s, we were calling machine learning statistical signal processing.
+
+Then immediately the buzzword machine learning came to the surface.
+
+Until 2010, we were calling deep learning the so-called artificial neural networks.
+
+Where deep learning came from, it came from the fact that those networks, they were deep,
+
+deep neural networks.
+
+That's why it actually shortened for deep learning.
+
+That's a topic that many people talk about, and actually large language models, we're
+
+going to go through it, is a subset of this notion of deep learning.
+
+For AI revolution, I'm borrowing actually a slide from a colleague from Bloomberg.
+
+The way you should think about it is this.
+
+Just look at this one, which has to do with the mention of AI, machine learning, or deep
+
+learning in earning calls.
+
+You don't see any, almost none, until 2012.
+
+But since then, you're seeing that actually it's been really growing exponentially.
+
+No question that these days to whoever you talk, firms are setting up data science groups,
+
+everybody's thinking about collecting data, everybody says what kind of features can extract
+
+from the data and all of this.
+
+But the entire reason for this evolution and revolution has to do with actually the amount
+
+of data that we have.
+
+The success of machine learning, deep learning, and large language models, it is due to big
+
+data, availability of data.
+
+Companies that have tons of data, they're collecting data, they want to see what they
+
+can learn from their data.
+
+After that becomes definitely due to more computational power.
+
+Machines becoming extremely powerful.
+
+A few years ago we were talking about GPUs, now we are talking about TPUs and MPUs, T
+
+for tensor and N for neurons.
+
+And no question this quantum computing, this could make computation extremely fast.
+
+You have tons of data, you have lots of computational power, and this quantum computing, that would
+
+almost make everything possible.
+
+Now just to give us some perspective, I'm going to take a look at the so-called FLOPS,
+
+just to give us some perspective.
+
+In 1952, estimating the entropy of English, it was kiloFLOPS.
+
+In 1979, speech recognition, gigaFLOPS.
+
+In 1994, when machine learning or machine transition started coming on, teraFLOPS, 10
+
+to the power 12, large language models or understanding of language, YottaFLOPS, 10
+
+to the power 24, and very soon within the next two years, which I call it XXXGPT, is
+
+quettaFLOPS.
+
+You can imagine when it goes to the so-called 10 to the power 3 to 10 to the power 30, you
+
+have 30 zeros, and that simply makes anything you imagine possible.
+
+And some people are actually saying that due to quantum computers, that itself could go
+
+up computationally, exponentially.
+

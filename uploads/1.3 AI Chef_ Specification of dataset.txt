@@ -1,0 +1,292 @@
+Now, recipe for becoming an AI chef.
+
+That's the entire lecture here, from the simplest possible problem you can imagine, the simplest problem, binary
+
+classification and regression, to the most advanced case you can imagine a machine learning,
+
+deep learning, the large language models. We follow a general recipe. In this recipe,
+
+The most important part is a specification of our data set.
+
+You can't, as I said, you cannot do anything with that data, and it doesn't mean all the data you have.
+
+You have to specify which data, which part of the data you want to utilize, the choice of the model or what we call it, architecture.
+
+You have to know what model is appropriate to use,
+
+the choice of objective function or dimension, that one earlier, initial parameter set you need for that model.
+
+Just think about the slope and intercept. The optimization routine.
+
+You going to use optimization. We're going to have a full lecture on the optimization part.
+
+You need to train and validate your model. You need to test your model.
+
+And also I talk about robustness which simply means you want to make sure that your model is robust against what we call it, adversarial attacks.
+
+Now when it comes to understanding your data, the best possible quote is "Without data, you're just another person with an opinion."
+
+I mean, I love this quote by Deming.
+
+Considering that AI, AI-based models are data driven, you need data because without that you're just another person with an opinion.
+
+Now, when it comes to your data, you should always ask the following questions no matter what, where they're coming from.
+
+First question your model is the data that you have.
+
+Is that a stationary or non-stationary?
+
+What it means is, a stationary means if you plot the distribution of your data, if you bin it, look at the frequency of it and as you're coming through time,
+
+do you see that shape for that, let's assume you have a bell shape or whatever that one is like
+
+when we have it for normal. And what you're doing is you grabbing your data.
+
+You look at the frequency of your data. Let's say your data is heights, the data is weights.
+
+The data could be age, whatever that would be.
+
+You binning it and you look at the frequency of the bins and you passing data through time.
+
+If that bell shape or that distribution shift is moving, your data is non-stationary.
+
+If the data shape, it's a bell shape, it stays on, your data is stationary.
+
+In general, unfortunately, your data is non-stationary.
+
+The next question, your data is parametric or non-parametric.
+
+That means can you explain your data with few parameters?
+
+Like for example, if you have a bell shape which is normal, normal distribution, normal distribution, you just need a mean and standard deviation.
+
+Just two simple parameters. Can you explain your data with just few parameters?
+
+If you can, it's parametric. If you cannot, it's non-parametric. Markovian versus non-Markovian.
+
+What it means is this. Let's say you want to make a decision. Would your decision just depend on your previous decision?
+
+Your decision depends on all your previous decisions.
+
+That means if you believe that for example, market is moving, it just depends on what happened yesterday versus what happened in the last two years.
+
+Every day, if it's just one step at a time it's Markovian.
+
+If it depends on the path of what has happened, it is non-Markovian.
+
+Remember most markets are non-Markovian but it is very important,
+
+As I said, going back again to it. Ask these three questions, stationary or non-stationary, parametric non-parametric, Markovian non-Markovian.
+
+If you don't ask these questions you wouldn't really know what kind of a data you working with.
+
+Now after this becomes of course going through a few of these I said if markets are Markovian means if I give you the path,
+
+you see, this is the past, or the path, and you wondering when it comes to the next data point, that you want to know what happens next time,
+
+can I just drop the history and just keep this guy in?
+
+If you can, then you say it is Markovian. That's the best way of explaining it.
+
+But some of you may ask me, hold on, what is that Xt itself?
+
+And I'm putting it here. The so-called the choice of Xt is up to you Xt could be one point at a time, Xt could be a simple event.
+
+X could be a path.
+
+This is your choice as an engineer, as a data scientist, as a decision making, as an executives, you should come up with the choice of X.
+
+The next one becomes. Let's assume there was a knee-jerk reaction in the market.
+
+Knee-jerk reaction to decision making. Maybe part of the data you're seeing is not relevant anymore.
+
+That means you can simply go ahead and drop it.
+
+That means anytime you want to make a decision, you need to understand.
+
+Is that data relevant or not? This is extremely important because you're making a decision similarly based on a knee-jerk which was not related at all.
+
+The other one is what happens if you really going through absolute regime change.
+
+That means what you've seen in the past is not relevant anymore.
+
+This is what we call in AI community learning with rejection.
+
+That means you should be able to reject what you've seen and say
+
+You know what? I'm missing out. I'm not going to make a decision because what I see is not relevant anymore.
+
+If it's not relevant, I'm not going to make my decision based on something is not relevant.
+
+Now moving on to data itself.
+
+Now we ask the questions. Good questions.
+
+As a data scientist, as a business executive, as whoever you are making that decision, data driven decision making, you have to ask those questions.
+
+Now comes the type of data or data set.
+
+These are just few examples I'm having for you in cases of when it comes to markets, let's say financial markets.
+
+The very first thing would come in mind is take data time series of them.
+
+That means you have tons and tons of data comes from exchanges. Like you see market data, holding data.
+
+For example, you're an asset manager. You're looking at a lot of mutual funds.
+
+Many, many of them. You want to see what is holding in that mutual funds.
+
+Is that exposure to technology, exposure to pharmaceutical companies, exposure to health care?
+
+Whatever that means. That means you have to have a good understanding of the holding there.
+
+Alternative data, the tons of The Internet of Things.
+
+Whatever you're collecting is out there, whatever you're collecting. Categorical data.
+
+Data comes in various different form. Text for classification, images for computer vision,
+
+sound for voice recognition, videos for motion detection, and more.
+
+You recognize this is when you're calling customer service. In many cases, they are recognizing your sound,
+
+recognizing what you're asking, they get back to what you're saying.
+
+They understand what you're saying.
+
+Then the whole thing is there's many different form of this data set, and they just collect it and they get analyzed.
+
+I'm considering that data comes in various form.
+
+You need to sit back as you're collecting it to see what's relevant and what's not relevant,
+
+to build a model on the top of it for your decision making.
+
+Second part of it is collecting. Generating,
+
+I tell you what I mean by generating, cleaning, pre- and post-processing, choosing,
+
+picking relevant data set, collecting and cleaning data for training.
+
+Data comes in various different form. It needs to get cleaned, by cleaning means
+
+They may, maybe some not the number thing.
+
+It may be some of the data is not relevant, whatever that one is.
+
+You have a criteria or criterion for really streamlining your data.
+
+In many cases, you do not have enough data. That means you need to generate more data for training.
+
+That itself is a big research area these days.
+
+Generating labels. In many cases, the data is unlabeled.
+
+It comes, but you need to categorize it yourself.
+
+This is a specific. If you're trying to do supervised learning, that means you have tons of data.
+
+You simply go ahead and label them.
+
+Let's say you get lots of pictures and then you're wondering, this would be a plane, this would be a bus, or you may split it this way.
+
+These are objects. These are living objects.
+
+These are just objects. They're flying objects, not flying objects.
+
+Then in a way, you have to categorize them. You have to label them.
+
+And you want to make sure that when you train, the machine can detect those labels.
+
+That means when the picture comes, can easily put label on them. Proper
+
+data classification. I'm going to come back to this one. Imputation.
+
+In many, many cases, part of the data could be missing.
+
+Or when you're cleaning data, you recognizing maybe you, the part of the data got missed and you want to impute it actually.
+
+And that itself, as I said, another area of research. And more.
+
+Now this is good actually, to start bringing in the fact that data comes raw.
+
+And then what happens is you may ask, who wants clean data?
+
+That means from the raw data that wasn't clean. Now you want to actually get the nice clean data.
+
+And you recognizing here everybody's willing to, everybody would love the idea of receiving a good clean data.
+
+But when it comes to the question of who's willing to clean data.
+
+I actually don't see that many volunteers.
+
+But the whole idea is you definitely want to make sure that you have groups that they willing to raise their hands and saying,
+
+actually, I'm willing to clean data. The reason is by cleaning data, you learn a lot about the data itself.
+
+I always would like to receive, and I always talk to my team, to my students, to everybody I interact with, always get the data yourself, the raw data.
+
+I know what you're doing for the process because as you're doing this cleaning, you're learning a lot from this.
+
+When you receive the clean data, you're not sure how it's being cleaned.
+
+Maybe that process, actually some of the features you're interested in, they're gone.
+
+You definitely want to make sure that you have access to raw data.
+
+Or at least if you don't have access to it, you know how they've done the cleaning.
+
+You should fully understand the cleaning process.
+
+Now, once you're done with all of this, now it comes to training set.
+
+That means for whatever you need, you need to put part of the data as a training set.
+
+You need to put some for the so-called validation because as you're doing training, you want to make sure you validate it.
+
+And validation means maybe under training you're doing a good job.
+
+But when you're validating, you recognize, you know, no, it's not doing what I was supposed to do.
+
+I actually going to go through this one in later lectures. And definitely after you fully done with the training and validation, you need to test it.
+
+There's a very nice quote here by Neumann is saying "With four parameters I can fit an elephant, and with five I can make him wiggle his trunk."
+
+What he's saying is this: if you give me enough parameters, I can always fit the data.
+
+And this is actually dangerous, it's not a good thing. The reason is because you simply forcing a model to data and don't have any understanding of data.
+
+That's what it's trying to say. This is the notion of overfitting.
+
+That's why I call this one quote on overfitting. You definitely want to make sure that, definitely you want to make sure that you understand your data,
+
+find the best possible model to it, not simply forcing the model to that data.
+
+Now, when it comes to data and AI, you may wonder, you have to ask yourself this question.
+
+Remember in the beginning I mentioned this. Working with data,
+
+Is it AI? You remember I had it, I said part of it may be AI, part of it is not.
+
+Believe it or not, when it comes to cleaning, you may need to utilize some AI techniques. When it comes to pre- and post-processing,
+
+You do need to utilize AI technique. When it comes to classification,
+
+You do recognize AI techniques, which is part of it has to do with clustering, curating, generating and replicating.
+
+I told you that, for example, what we call these days as generative adversarial networks, or in short, GANs.
+
+What GANs do is exactly learning and replicating the real data to provide you synthetic data that follows the same statistical property.
+
+And I mentioned for imputation, we utilize some AI techniques.
+
+The simplest, simplest, simplest version of it that we utilize is called linear interpolation, which is not AI.
+
+The next one is what we call a geometric Brownian motion or Brownian bridge,
+
+which is not AI simulation, but they many, many other techniques which are absolutely AI, and more.
+
+Then to answer the question, working with AI, is it AI or not?
+
+It depends.
+

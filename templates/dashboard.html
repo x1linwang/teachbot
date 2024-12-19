@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Dashboard</a>
+            <button class="btn btn-outline-light" onclick="window.location.href='/logout';">Logout</button>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h1 class="text-center">Chatbot Analytics</h1>
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <div class="card text-white bg-primary mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Chats Today</h5>
+                        <p class="card-text">{{ analytics['total_chats_today'] }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-success mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Total Users</h5>
+                        <p class="card-text">{{ analytics['total_users'] }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-white bg-warning mb-3">
+                    <div class="card-body">
+                        <h5 class="card-title">Average Rating</h5>
+                        <p class="card-text">{{ analytics['average_rating'] }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-5">Recent File Uploads</h2>
+        <table class="table table-striped mt-3">
+            <thead>
+                <tr>
+                    <th>Filename</th>
+                    <th>Size</th>
+                    <th>Uploaded Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for file in analytics['recent_files'] %}
+                <tr>
+                    <td>{{ file['filename'] }}</td>
+                    <td>{{ file['size'] }}</td>
+                    <td>{{ file['uploaded'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2 class="mt-5">Usage Over Time</h2>
+        <canvas id="usageChart" width="400" height="200"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('usageChart').getContext('2d');
+        const usageChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [{
+                    label: 'Interactions',
+                    data: [12, 19, 23, 17, 25, 30, 22],
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    tension: 0.1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

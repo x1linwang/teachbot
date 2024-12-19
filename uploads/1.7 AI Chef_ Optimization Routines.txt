@@ -1,0 +1,146 @@
+Now, the last topic I want to talk about here is the choice of optimization routine.
+
+We talked about that, let's say, let's go back again to it. You remember you wanted to say minimize this difference.
+
+I'm going to write it one more time if you do not mind. And let's assume you had endpoints.
+
+And these are the points that coming from the model, the line.
+
+And these are the points that you have made from the points. And this is what you're trying to actually minimize.
+
+Find the best possible m and h. Because remember M and H is hidden inside here.
+
+That's the way you did the calculation right.
+
+You want to find the best m and h. That,
+
+you minimize this, your objective function.
+
+The simplest thing you can do, the simplest thing, I always tell my student.
+
+The simplest thing you should do, or you can do, is what we call brute force or grid search.
+
+That simply means for the m and h. You may say M really
+
+Let's do it from -3 coming to +3. That should be good enough. For H doing it from 4 to -4
+
+And add more to your grid, say -2.5, -0.2, going on to 2.5.
+
+And here say 3.5 going down to say -3.5 down here.
+
+And then you look at all these possible points. And all of a sudden you say
+
+Voila I got this is my optimal one because it gives me the smallest error, a smallest whatever you want to call it.
+
+And this is one way of going around it. I actually am going to go through this with you guys for the next lecture.
+
+The problem with this one is you can imagine curse of dimensionality.
+
+That means as things are starting, growing by things that started growing means you had here just m and h.
+
+What happens if you have a, b, c, d, e, m, h, z, y, x, whatever that one is and goes on and on.
+
+If you try to do this for every parameter you can imagine, that exponentially would get expensive.
+
+This is actually one of the issues, but the argument is in the community,
+
+if we introduce this quantum mechanics and operations, we can do ten to the power whatever in nanosecond.
+
+Then this becomes doable. That's a valid point. And at some point in some cases we do it.
+
+But that's the inverse that my entire reason of introducing this alpha,
+
+you remember going back that you can do various randomized starting points between each to a starting point if you do exactly what I did.
+
+That's one way of going around it. But as I said, this becomes really an art is almost like a chef, is hard to measure,
+
+is simply you have to understand what makes sense, what are the good, the starting points.
+
+But some of these models get so complex, so complex is almost impossible to imagine.
+
+You can't really understand anything about some of those parameters.
+
+That is why you need to be very, very careful with what would be a good starting point.
+
+But on the top of it, are you having a good optimizer to optimize, minimize or maximize that objective function you having in mind?
+
+The next one is what we call gradient, gradient-free routines.
+
+These are the routines that what we do is, gradient free routines simply means you can create
+
+In wherever you are standing, wherever you are standing, let's say just schematically,
+
+let's assume you are standing here and you do a polytope that means where you're standing, you create.
+
+Depending on the dimension, you create this around yourself and then you go and do a search here.
+
+And then you seeing that in this polytope, where is the minimum or maximum depends on what the objective is.
+
+Let's assume, for example, says this point is the one. Do you do another polytope around here?
+
+And then you say, let's see what is the minimum? This is this point. You do another polytope here.
+
+So where is the point? It says here. Then you recognizing what it does is as opposed to grid search which you do it for almost entire domain.
+
+Here you create something around you and you start navigating through it.
+
+That would allow you, without knowing anything about the surface, would allow you to navigate.
+
+And that wave would send you hopefully to the right place, and then maybe here and then maybe here.
+
+And finally, you would end up to finding the some notion of optimal point.
+
+Again, the problem with this one is the starting point. Because if you start from a bad place, remember this Arizona, Himalaya.
+
+The simple example I had in mind. It's very, very important you do this with many, many different starting points.
+
+My trick to this always is, and I'm telling my students, executive, whoever I work with, that if you utilizing this optimization,
+
+what you need to do is you really need to do it through various different starting point, many, many different starting points. At the end,
+
+we do gradient based routines, which simply what it is,
+
+is it looks at the slope of where you're standing, the steepness of it, and it follows this steepness.
+
+The problem with this one is if it's a jaggedy place, is very bumpy and jaggedy.
+
+The slope could be deceiving because it takes, but if it's a nice place, is nicely could bring you.
+
+And it depends on the type of a surface you work with. Nothing is ever easy in AI.
+
+You need to be careful about what you're doing. You have to have a good understanding of what you're doing,
+
+and then you have to understand which optimization becomes the so-called the most appropriate optimization toolbox for you.
+
+We definitely gonna talk about this in length in a very simple, beautiful, visualized way.
+
+What is important is this for any learning problem, I want to make sure this sentence is super important.
+
+Any learning problem at the end is an optimization problem.
+
+Why? Because optimization is the central task of machine learning.
+
+And when I'm saying machine learning,
+
+that means A.I., deep learning and any aspect of A.I. we are talking about here that you specify your data, you specify your model.
+
+I'm repeating myself going through the recipe, starting from data, specifying
+
+your model, your objective function, your initial parameters set, and at the end,
+
+What you're trying to do is you are trying not to optimize that objective.
+
+Any learning problem at the end is nothing but an optimization problem.
+
+That is why I'm going to have a full lecture in a very nice visualized way,
+
+Beautiful visualized way to explain to how it works,
+
+and then going through some of the cases showing that how you can make it fail is very, very important.
+
+Because when you build something, you have to understand how that fails and understand the shortcomings of it.
+
+That would help you tested against adversarial understanding, the shortcomings of it and all of that.
+
+Thank you.
+

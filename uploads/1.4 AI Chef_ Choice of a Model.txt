@@ -1,0 +1,216 @@
+Now let's move on to models. When it comes to models, I'm just having a short list of them.
+
+Choice of a model. For classification,
+
+There's tons of models out there. I'm just naming a few.
+
+Just naming a few for you to get familiar with it. Logistic regression.
+
+Decision trees. Random forests. Naive Bayes.
+
+What I'm trying to tell you is just pay attention to how many models are out there.
+
+Then you should ask, which model should I use? I'm going to come back to that.
+
+The whole thing about that is you need to be very, very careful with the choice of the model.
+
+It doesn't mean there's so many models out there. Any of it would work.
+
+No, it depends on the data you will be working with.
+
+In some cases you need to reduce dimensionality because let's say for example, macroecon data, there's 6 or 700 different macroecon data.
+
+GDP inflation rate, employment rate,
+
+Interest rate. There's so, so many of them.
+
+And what you need to do is when it comes to decision making,
+
+you need to reduce them and see what are the most important factors that I have to utilize, which we call it principle.
+
+Then you recognizing there are so many of these models out there, so, so many of them.
+
+Then again, which model would you use? Depends on your application. Clustering methods.
+
+We need to, let's assume for example, you have 20,000, 25,000 different funds, different mutual funds.
+
+And what you need to do is when it comes to selection, you need to cluster those funds into, let's say, 5 or 6 of them.
+
+That means you bring in certain similarities and say that among these I can see five clusters, and I can put in these clusters.
+
+And when it comes to decision making makes it easier for you to deal with.
+
+But again, you recognizing there are so many of these models out there.
+
+My entire thing explaining this one is wanted to tell you there are so many, and when it comes to your decision making,
+
+it is yours to know which one is proper and it has to do a bit, which I call it knowledge under the hood.
+
+Now for solving equations. There's so many of them out there mapping input data to labels via the so-called, some of these forward neural,
+
+feed forward neural networks, using neural networks as a solution for image classifications.
+
+You have the so-called convolutional neural networks. For sequence analysis or sentiment analysis,
+
+There's so many of them out there. And these days, these large language models that I'm having here, LLMs, for sentiment analysis,
+
+mathematical reasoning, and more, which we utilize transformers and more and more and more.
+
+The whole idea is this list, I'm just having it there to tell you that there are library of models.
+
+There's really a pool of these models, and for you, the most important part is to understand which model to use.
+
+But before that, we definitely know we cannot learn anything from garbage.
+
+That means if you put garbage in the so-called you get garbage out.
+
+That's definitely the case. And it is also should be obvious, should be obvious if you put garbage into a bad model.
+
+Garbage means not appropriate or no matter what, anyway you get garbage.
+
+But if you use really nice clean data, find the appropriate model to it.
+
+You get amazing result out. This should be hopefully clear, but this may not be actually clear even though it's supposed to be obvious.
+
+First one is this. Let's assume you did an amazing job on your data.
+
+You did beautiful classification. You nicely clean it, you find the right group of models, but unfortunately you used a bad model for it.
+
+If you do that, your result would be garbage and you may say, oh, I did an amazing job on my data,
+
+I cleaned it, I properly classified, that's all true, but think about the library of the models I introduce.
+
+If you use a bad model, no matter how beautiful your data is, what you're getting out is garbage.
+
+On the other hand, let's assume you really, really found a beautiful model, but you did not do right with your data in any aspect of it.
+
+Your result would be garbage as well. Then it's very important for you to recognize everything should be right, is not just the data, the model too.
+
+And that is why. And it's always good to go through the list of, those models that I had, and start always from the simplest one.
+
+But as I mentioned, you need to make sure that you have the so-called good understanding of your data,
+
+good understanding what you're trying to achieve with that data.
+
+The decision want to come out of it. And knowing that sometimes the model might be a black box, you want to make sure that you,
+
+before the results come out, you have some understanding of what you're expecting.
+
+You cannot just trust whatever comes out of the model.
+
+You have to have intuition. That's what to call it a priori.
+
+You should definitely know something about what's going to spill out of the model.
+
+Now, let's say all of this would be in place.
+
+Still, this is what I would do. I would definitely go ahead and try it on various different simulated data and compare.
+
+That means for a different decision coming out,
+
+you still need to go ahead and maybe replace part of that data with simulated data and see what results come out.
+
+You check robustness by adding a noise to it, which I'm going to go through it in the next slide.
+
+And then also always see what you're doing in sampling training for your training and when you testing it.
+
+But what I call here by the so-called, what I call here as in-sample versus out of sample,
+
+means what I did in my training versus what's coming out of testing.
+
+That means you want to make sure what you seen during training,
+
+once you train what comes out and you do also testing, they kind of consistent. That consistency,
+
+At the end of a day, you're the engineer, you're the artist, you are the AI chef, and you need to have an understanding what that consistency means.
+
+Now when it comes to robustness, before we talk about robustness, let's talk about a few questions on AI based model.
+
+The very first question is this, which is very relevant, can it be understood by human or simply a black box?
+
+I told you, you have to have a priori, a good understanding what you supposed to see.
+
+You have to understand what the model does.
+
+If the model doesn't do well, do we know why? If the model is not working, is that because the model wasn't appropriate?
+
+Is that because the regime has changed and the model is not good for the new regime?
+
+Maybe you didn't have a good understanding of data, has switched or is not relevant anymore, and you are still expecting the model to do
+
+Good job on it. Can you understand and follow model prediction and decision?
+
+Again, you have to kind of know what's supposed to come out of the model.
+
+If you don't, don't even try it. Now, do they know when the trained model has failed?
+
+That has to do with consistency again, going back to my previous slide. How robust is the model against adversarial attack?
+
+The best example for this one is this classic example.
+
+You recognizing this model was trained to kind of when you showed an image to recognize what animal or what object you seeing.
+
+The model actually said, or says, is a panda with almost 60% confidence.
+
+We add noise to Panda and you recognize this noise bunch of pixel and it's hard to see it with eyes.
+
+And you recognizing you don't see any difference whatsoever after you add the noise.
+
+But when you're putting it into the engine, believe it or not, it says it's gibbon with almost 100% confidence.
+
+This is what we call attacking your model with adversarial attacks or adversarial examples.
+
+This is a classic example and should always do it. Just to go back, I want to take you back to one previous slide,
+
+try it on various simulated data and compare or add some noise to it and see how robust it is.
+
+These are simple test. The very first says you have to do that means whatever engine
+
+has been developed with your team, whoever it is doing it always asks him did you try it against this type of attack?
+
+Did you add noise to it? Did you add this kind of a noise to it?
+
+There's so infinitely many differences
+
+when I was doing it just for you to build some confidence about what you're doing. For testing against adversarial attacks.
+
+Let's go through this very, very simple example. Let's assume I'm giving you a black box.
+
+This black box is your trading engine. That simply means if I feed the market to it, let's assume this is a market.
+
+This is time. This is a stock at time t.
+
+And let's assume this is how this stock has been moving. And it was a very, very big jump, after that there was a big drop and something like that.
+
+You feeding this data in this to black box. And over here you getting this is your PnL,
+
+what you making out of trading that stock. And let's assume hypothetically this is the PnL coming out of it.
+
+You seeing is a beautiful, healthy PnL and boom, just going to the roof.
+
+Now, let's assume you want to see how robust this engine is.
+
+What I would do is definitely I would go and add
+
+noise to it. Let me go and change the color to be able to show some noise here.
+
+I'm changing the color and I'm adding a bit of a noise.
+
+You recognizing this is kind of exactly the same kind of data with a bit of a noise.
+
+And then let's assume on the performance you see something like this.
+
+This is perfect. A bit of a noise. It got distorted, but not by much.
+
+But let's assume I go ahead and do another noise.
+
+Because I told you you can do many different kinds of noise. This is another noise I'm doing, and I do this.
+
+And all of a sudden this is what I'm getting. That means your engine was not robust enough against certain noise or certain adversarial attacks.
+
+Every trading engine, every trading engine needs to get checked against a bit of a noise.
+
+You always need to be careful with this. Always be careful not just taking it for granted and assuming because you've seen this one
+
+it would hold for any type of a noise, this is definitely the very first thing needs to always get checked.
+
