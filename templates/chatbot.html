@@ -142,7 +142,7 @@
                     .then(response => response.json())
                     .then(data => {
                         chatHistory.innerHTML = data.messages.map(msg => {
-                            return `<div class="message ${msg.type === 'user' ? 'my-message' : 'other-message'}">${msg.text}</div>`;
+                            return `<div class="message ${msg.type === 'user' ? 'my-message' : 'other-message'}"><strong>${msg.type === 'user' ? 'User' : 'AI'}:</strong> ${msg.text}</div>`;
                         }).join('');
                     });
             });
@@ -153,7 +153,7 @@
             const userMessage = chatInput.value.trim();
             if (userMessage === '') return;
 
-            appendMessage('my-message', userMessage);
+            appendMessage('my-message', userMessage, 'User');
             chatInput.value = '';
 
             fetch('/api/chat', {
@@ -163,17 +163,17 @@
             })
             .then(response => response.json())
             .then(data => {
-                appendMessage('other-message', data.response);
+                appendMessage('other-message', data.response, 'AI');
             })
             .catch(err => {
-                appendMessage('other-message', 'Error connecting to chatbot.');
+                appendMessage('other-message', 'Error connecting to chatbot.', 'AI');
             });
         });
 
-        function appendMessage(className, text) {
+        function appendMessage(className, text, sender = '') {
             const message = document.createElement('div');
             message.className = `message ${className}`;
-            message.textContent = text;
+            message.innerHTML = `<strong>${sender}</strong>: ${text}`;
             chatHistory.appendChild(message);
             chatHistory.scrollTop = chatHistory.scrollHeight;
         }

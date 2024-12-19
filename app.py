@@ -206,6 +206,12 @@ def dashboard():
     }
     return render_template('dashboard.html', analytics=analytics_data)
 
+
+@app.after_request
+def add_frame_options_header(response):
+    response.headers['X-Frame-Options'] = 'ALLOWALL'
+    return response
+
 @app.route('/chatbot')
 @login_required
 def chatbot_ui():
