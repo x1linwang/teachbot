@@ -42,11 +42,15 @@
                 </div>
             </div>
         </div>
-        <h2 class="mt-5">Upload Files</h2>
-        <div class="mt-3">
-            <input type="file" id="fileInput" class="form-control">
-            <button id="uploadBtn" class="btn btn-primary mt-2">Upload</button>
-        </div>
+        <h2 class="mt-5">Edit RAG Prompt Logic</h2>
+        <textarea id="rag-prompt" class="form-control" rows="6">{{ rag_prompt_logic }}</textarea>
+        <button id="save-prompt" class="btn btn-success mt-2">Save</button>
+        <h2 class="mt-5">Switch ChatGPT Model</h2>
+        <select id="model-switch" class="form-select">
+            <option value="gpt-3.5-turbo">GPT-3.5</option>
+            <option value="gpt-4">GPT-4</option>
+        </select>
+        <button id="switch-model" class="btn btn-primary mt-2">Switch Model</button>
         <h2 class="mt-5">User Chats</h2>
         <table class="table table-striped mt-3">
             <thead>
@@ -73,6 +77,7 @@
         <canvas id="usageChart" width="400" height="200"></canvas>
     </div>
     <script>
+        // Chart for interactions over time
         const ctx = document.getElementById('usageChart').getContext('2d');
         const usageChart = new Chart(ctx, {
             type: 'line',
@@ -93,28 +98,45 @@
             }
         });
 
-        document.getElementById('uploadBtn').addEventListener('click', () => {
-            const fileInput = document.getElementById('fileInput');
-            if (!fileInput.files.length) {
-                alert('Please select a file to upload.');
-                return;
-            }
-
-            const formData = new FormData();
-            formData.append('file', fileInput.files[0]);
-
-            fetch('/api/upload', {
+        // Save RAG Prompt Logic
+        document.getElementById('save-prompt').addEventListener('click', () => {
+            const prompt = document.getElementById('rag-prompt').value;
+            fetch('/api/save-rag-prompt', {
                 method: 'POST',
-                body: formData
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt })
             })
-            .then(response => response.json())
-            .then(data => {
-                alert(data.message);
-                window.location.reload();
+            .then(response => {
+                if (response.ok) {
+                    alert('RAG prompt updated successfully.');
+                } else {
+                    alert('Failed to update RAG prompt.');
+                }
             })
             .catch(error => {
-                console.error('Upload failed:', error);
-                alert('File upload failed.');
+                console.error('Error:', error);
+                alert('An error occurred while saving the RAG prompt.');
+            });
+        });
+
+        // Switch ChatGPT Model
+        document.getElementById('switch-model').addEventListener('click', () => {
+            const model = document.getElementById('model-switch').value;
+            fetch('/api/switch-model', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ model })
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert(`Switched to model: ${model}`);
+                } else {
+                    alert('Failed to switch model.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while switching models.');
             });
         });
     </script>

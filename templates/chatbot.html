@@ -114,38 +114,28 @@
                                 <button id="send-btn" class="btn btn-primary">Send</button>
                             </div>
                         </div>
+                        <div class="rating mt-3 text-center">
+                            <h6>Rate this chat:</h6>
+                            <button class="btn btn-outline-success rate-btn" data-rating="5">⭐⭐⭐⭐⭐</button>
+                            <button class="btn btn-outline-warning rate-btn" data-rating="3">⭐⭐⭐</button>
+                            <button class="btn btn-outline-danger rate-btn" data-rating="1">⭐</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        const chatListItems = document.querySelectorAll('.chat-list li');
         const chatInput = document.getElementById('chat-input');
         const sendBtn = document.getElementById('send-btn');
         const chatHistory = document.querySelector('.chat-history');
         const newChatBtn = document.getElementById('new-chat-btn');
+        const rateBtns = document.querySelectorAll('.rate-btn');
 
         // Start a new chat
         newChatBtn.addEventListener('click', () => {
             chatHistory.innerHTML = '';
             chatInput.value = '';
-        });
-
-        // Fetch chat history when a conversation is clicked
-        chatListItems.forEach(item => {
-            item.addEventListener('click', () => {
-                chatListItems.forEach(i => i.classList.remove('active'));
-                item.classList.add('active');
-                const chatId = item.getAttribute('data-id');
-                fetch(`/api/chat-history?id=${chatId}`)
-                    .then(response => response.json())
-                    .then(data => {
-                        chatHistory.innerHTML = data.messages.map(msg => {
-                            return `<div class="message ${msg.type === 'user' ? 'my-message' : 'other-message'}"><strong>${msg.type === 'user' ? 'User' : 'AI'}:</strong> ${msg.text}</div>`;
-                        }).join('');
-                    });
-            });
         });
 
         // Send new messages
@@ -167,6 +157,18 @@
             })
             .catch(err => {
                 appendMessage('other-message', 'Error connecting to chatbot.', 'AI');
+            });
+        });
+
+        // Handle rating
+        rateBtns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const rating = e.target.getAttribute('data-rating');
+                fetch('/api/rate-chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ rating })
+                }).then(() => alert('Thank you for your feedback!'));
             });
         });
 
